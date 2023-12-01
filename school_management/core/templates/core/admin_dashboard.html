@@ -1,0 +1,10 @@
+<!-- core/templates/core/admin_dashboard.html -->
+
+{% extends 'core/base.html' %}
+
+{% block title %}Admin Dashboard{% endblock %}
+
+{% block content %}
+    <h2>Welcome, {{ user.username }}!</h2>
+    <p>This is the admin dashboard. You can manage teachers, students, and more.</p>
+{% endblock %}

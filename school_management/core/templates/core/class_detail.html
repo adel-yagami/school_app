@@ -1,0 +1,24 @@
+<!-- core/templates/core/class_detail.html -->
+
+{% extends 'base_generic.html' %}
+
+{% block content %}
+  <h1>Class: {{ class.name }}</h1>
+  <p>Grade Level: {{ class.grade_level }}</p>
+
+  <h2>Students</h2>
+  <ul>
+    {% for student in students %}
+      <li>{{ student.name }} - Grade: {{ student.grade }}</li>
+    {% endfor %}
+  </ul>
+
+  <h2>Add Student</h2>
+  <form method="post" action="">
+    {% csrf_token %}
+    {{ form.as_p }}
+    <button type="submit">Add Student</button>
+  </form>
+
+  <a href="{% url 'class_list' %}">Back to Class List</a>
+{% endblock %}

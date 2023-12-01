@@ -1,0 +1,12 @@
+<!-- class_edit.html -->
+{% extends 'base_generic.html' %}
+
+{% block content %}
+  <h1>{% if form.instance.pk %}Edit{% else %}New{% endif %} Class</h1>
+  <form method="post" class="post-form">
+    {% csrf_token %}
+    {{ form.as_p }}
+    <button type="submit">Save</button>
+  </form>
+  <a href="{% url 'class_list' %}">Cancel</a>
+{% endblock %}

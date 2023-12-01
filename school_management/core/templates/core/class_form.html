@@ -1,0 +1,17 @@
+<!-- core/templates/core/class_form.html -->
+
+{% extends 'core/base.html' %}
+
+{% block title %}
+  {% if form.instance.pk %}Update Class{% else %}Create Class{% endif %}
+{% endblock %}
+
+{% block content %}
+  <h2>{% if form.instance.pk %}Update Class{% else %}Create Class{% endif %}</h2>
+  <form method="post">
+    {% csrf_token %}
+    {{ form.as_p }}
+    <button type="submit">Save</button>
+  </form>
+  <a href="{% url 'class_list' %}">Back to Class List</a>
+{% endblock %}

@@ -1,0 +1,17 @@
+<!-- core/templates/core/class_list.html -->
+
+{% extends 'core/base.html' %}
+
+{% block title %}Class List - School Management System{% endblock %}
+
+{% block content %}
+  <h2>Class List</h2>
+
+  <ul>
+    {% for my_class in classes %}
+      <li>{{ my_class.name }} - <a href="{% url 'update_class' pk=my_class.pk %}">Update</a> | <a href="{% url 'delete_class' pk=my_class.pk %}">Delete</a></li>
+    {% endfor %}
+  </ul>
+
+  <a href="{% url 'create_class' %}">Create Class</a>
+{% endblock %}

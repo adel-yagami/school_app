@@ -1,0 +1,11 @@
+<!-- core/templates/core/student_list.html -->
+
+<h2>Student List</h2>
+
+<ul>
+  {% for student in students %}
+    <li>{{ student.name }} - {{ student.class_association.name }} - <a href="{% url 'update_student' pk=student.pk %}">Update</a> | <a href="{% url 'delete_student' pk=student.pk %}">Delete</a></li>
+  {% endfor %}
+</ul>
+
+<a href="{% url 'create_student' %}">Create Student</a>

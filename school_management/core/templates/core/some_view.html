@@ -1,0 +1,18 @@
+<!-- core/templates/core/some_view.html -->
+
+{% extends 'base.html' %}
+
+{% block title %}Student Information{% endblock %}
+
+{% block content %}
+  <h2>Student Information</h2>
+  {% if students %}
+    <ul>
+      {% for student in students %}
+        <li>{{ student.name }} - {{ student.grade }}</li>
+      {% endfor %}
+    </ul>
+  {% else %}
+    <p>No students in your class.</p>
+  {% endif %}
+{% endblock %}

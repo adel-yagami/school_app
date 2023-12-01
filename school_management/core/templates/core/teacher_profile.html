@@ -1,0 +1,13 @@
+<!-- core/templates/core/teacher_profile.html -->
+{% extends 'base_generic.html' %}
+
+{% block title %}Teacher Profile{% endblock %}
+
+{% block content %}
+  <h2>Teacher Profile</h2>
+  <form method="post" action="">
+    {% csrf_token %}
+    {{ form.as_p }}
+    <button type="submit">Save Profile</button>
+  </form>
+{% endblock %}

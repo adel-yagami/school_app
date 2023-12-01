@@ -1,0 +1,10 @@
+{% extends 'core/base.html' %}
+
+{% block content %}
+  <h2>Assignments</h2>
+  <ul>
+    {% for assignment in assignment_list %}
+      <li>{{ assignment.title }} - {{ assignment.description }} ({{ assignment.teacher.name }}, {{ assignment.student.name }})</li>
+    {% endfor %}
+  </ul>
+{% endblock %}

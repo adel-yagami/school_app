@@ -1,0 +1,10 @@
+{% extends 'core/base.html' %}
+
+{% block content %}
+  <h2>Students</h2>
+  <ul>
+    {% for student in student_list %}
+      <li>{{ student.name }} - {{ student.grade }}</li>
+    {% endfor %}
+  </ul>
+{% endblock %}
